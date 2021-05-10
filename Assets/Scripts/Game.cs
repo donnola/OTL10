@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEditor;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -9,6 +10,7 @@ namespace Assets.Scripts
         {
             public static event Action<int> GetMoney;
             private static int m_Money;
+            
             public static int Money => m_Money;
             //public static GameObject Player;
             

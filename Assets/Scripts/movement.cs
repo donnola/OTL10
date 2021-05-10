@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts.Assets.Scripts;
+using Assets.Scripts.UI;
 using UnityEngine;
 
 public class movement : MonoBehaviour
@@ -39,7 +40,11 @@ public class movement : MonoBehaviour
         
         //m_SpeedVector = transform.forward * m_Speed;
     }
- 
+
+    private void Start()
+    {
+    }
+
     private void updateTargetRotation()
     {
         Vector3 rotation = m_BaseRotation;
@@ -119,10 +124,5 @@ public class movement : MonoBehaviour
         {
             debug_get_pressed();
         }
-    }
-
-    public void Die()
-    {
-        
     }
 }

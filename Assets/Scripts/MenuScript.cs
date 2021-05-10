@@ -9,7 +9,7 @@ namespace Assets.Scripts
     public class MenuScript : MonoBehaviour
     {
         [SerializeField] private SceneAsset UIScene;
-        [SerializeField] private SceneAsset m_Scene;
+        [SerializeField] public SceneAsset m_Scene;
         public void StartGame()
         {
             SceneManager.LoadScene(m_Scene.name);
