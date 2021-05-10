@@ -16,5 +16,10 @@ namespace Assets.Scripts
             SceneManager.LoadScene(UIScene.name, LoadSceneMode.Additive);
             Game.start_attempt();
         }
+
+        public void Quit()
+        {
+            Application.Quit();
+        }
     }
 }
