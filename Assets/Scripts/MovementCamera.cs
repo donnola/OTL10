@@ -24,7 +24,7 @@ public class MovementCamera : MonoBehaviour
     void Update() 
     { 
         if (m_target != null) {
-            transform.position = m_target.position - Vector3.forward * m_distant;
+            transform.position = m_target.position - Vector3.forward * m_distant ;
             transform.LookAt(m_target.position);
         }
     }
