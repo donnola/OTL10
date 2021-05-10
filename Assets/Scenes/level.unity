@@ -223,8 +223,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Speed: 0.5
-  target_z: -1.25
-  m_RotationAngle: 10
+  target_z: 4
+  m_RotationAngle: 20
   m_StartPosition: {x: 0, y: 0, z: -1}
   m_BaseRotation: {x: 0, y: 0, z: 0}
 --- !u!4 &399536278

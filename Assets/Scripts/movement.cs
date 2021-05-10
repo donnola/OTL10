@@ -10,10 +10,11 @@ public class movement : MonoBehaviour
     [SerializeField] private float target_z;
     // Start is called before the first frame update
     private bool m_UpPressed, m_DownPressed, m_LeftPressed, m_RightPressed;
-    private Vector3 m_UpDirection = new Vector3(0, 1, 0);
-    private Vector3 m_RightDirection = new Vector3(1, 0, 0);
-    private Vector3 m_LeftDirection = new Vector3(-1, 0, 0);
-    private Vector3 m_DownDirection = new Vector3(0, -1, 0);
+    private static float sq_vect = (float) Math.Sqrt(2);
+    private Vector3 m_UpDirection = new Vector3(-1, 0, 0);
+    private Vector3 m_RightDirection = new Vector3(0, sq_vect, -sq_vect);
+    private Vector3 m_LeftDirection = new Vector3(0, -sq_vect, sq_vect);
+    private Vector3 m_DownDirection = new Vector3(1, 0, 0);
     [SerializeField] private float m_RotationAngle;
     [SerializeField] private Vector3 m_StartPosition;
     [SerializeField] private Vector3 m_BaseRotation;
