@@ -21,7 +21,7 @@ namespace Assets.Scripts.UI
 
         void ChangeMark(int coins)
         {
-            if (coins < 3)
+            /*if (coins < 3)
             {
                 m_Text.text = $"неуд({coins})";
             }
@@ -38,7 +38,8 @@ namespace Assets.Scripts.UI
             if (coins >= 8)
             {
                 m_Text.text = $"отл({coins})";
-            }
+            }*/
+            m_Text.text = $"отл({coins})";
         }
     }
 }
