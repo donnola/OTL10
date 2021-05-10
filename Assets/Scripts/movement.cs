@@ -19,7 +19,8 @@ public class movement : MonoBehaviour
     [SerializeField] private float m_RotationSpeed;
     [SerializeField] private Vector3 m_StartPosition;
     [SerializeField] private Vector3 m_BaseRotation;
-
+    
+    
     //private Quaternion m_CurrentRotation;
     private Quaternion m_TargetRotation;
 
@@ -117,5 +118,10 @@ public class movement : MonoBehaviour
         {
             debug_get_pressed();
         }
+    }
+
+    public void Die()
+    {
+        
     }
 }
