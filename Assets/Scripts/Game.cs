@@ -52,7 +52,7 @@ namespace Assets.Scripts
             public static void finish()
             {
                 is_Running = false;
-                EndGame?.Invoke(true);
+                EndGame?.Invoke(false);
                 Debug.Log("Конец");
             }
 
