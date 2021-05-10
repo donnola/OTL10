@@ -14,6 +14,7 @@ namespace Assets.Scripts
             if (other.CompareTag("Coin"))
             {
                 Game.get_coin();
+                Destroy(other);
             }
         }
     }
