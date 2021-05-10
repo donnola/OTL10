@@ -7,8 +7,6 @@ namespace Assets.Scripts.UI
 {
     public class EndPanelScript: MonoBehaviour
     {
-        [SerializeField] private GameObject m_EndPanel;
-        [SerializeField] private GameObject m_Info;
         [SerializeField] private SceneAsset m_MenuScene;
         [SerializeField] private SceneAsset UIScene;
         [SerializeField] public SceneAsset m_Scene;
