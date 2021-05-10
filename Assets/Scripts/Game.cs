@@ -47,6 +47,11 @@ namespace Assets.Scripts
                 Debug.Log("Coin!");
                 ++m_Money;
                 GetMoney?.Invoke(m_Money);
+                if (m_Money == 10)
+                {
+                    is_Running = false;
+                    EndGame?.Invoke(false);
+                }
             }
 
             public static void finish()
