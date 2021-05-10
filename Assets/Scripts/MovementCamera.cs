@@ -8,7 +8,7 @@ public class MovementCamera : MonoBehaviour
     
     // Update is called once per frame
     [SerializeField] 
-    private float m_distant = 5.0f;
+    private float m_distant = 0.5f;
     [SerializeField]
     public Transform m_target;
 
