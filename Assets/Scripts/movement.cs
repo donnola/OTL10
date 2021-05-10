@@ -40,7 +40,12 @@ public class movement : MonoBehaviour
         Debug.Log(transform.right);
         
     }
- 
+
+    private void Start()
+    {
+        
+    }
+
     private void updateTargetRotation()
     {
         Vector3 rotation = m_BaseRotation;
@@ -120,10 +125,5 @@ public class movement : MonoBehaviour
         {
             debug_get_pressed();
         }
-    }
-
-    public void Die()
-    {
-        
     }
 }
