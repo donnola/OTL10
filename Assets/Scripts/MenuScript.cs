@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using Assets.Scripts.Assets.Scripts;
+using UnityEditor;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,6 +14,7 @@ namespace Assets.Scripts
         {
             SceneManager.LoadScene(m_Scene.name);
             SceneManager.LoadScene(UIScene.name, LoadSceneMode.Additive);
+            Game.start_attempt();
         }
     }
 }
