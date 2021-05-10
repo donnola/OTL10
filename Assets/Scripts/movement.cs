@@ -35,9 +35,6 @@ public class movement : MonoBehaviour
         m_RightPressed = Input.GetKeyDown(KeyCode.RightArrow);
         //m_CurrentRotation = Quaternion.Euler(m_BaseRotation);
         updateTargetRotation();
-        
-        Game.finish();
-        
         //m_SpeedVector = transform.forward * m_Speed;
     }
 
@@ -65,9 +62,6 @@ public class movement : MonoBehaviour
             rotation += m_UpDirection * m_MaxRotationAngle;
         }
         m_TargetRotation = Quaternion.Euler(rotation);
-        //Debug.Log(m_TargetRotation);
-        //Debug.Log(transform.position);
-        //transform.rotation = Quaternion.Euler(rotation);
     }
     
     private bool process_key(KeyCode code, ref bool flag)
@@ -95,7 +89,6 @@ public class movement : MonoBehaviour
         changed |= process_key(KeyCode.RightArrow, ref m_RightPressed);
         if (changed)
         {
-            //Debug.Log("Change");
             updateTargetRotation();
         }
     }
@@ -112,13 +105,17 @@ public class movement : MonoBehaviour
     void Update()
     {
         process_keys();
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, m_TargetRotation, m_RotationSpeed * Time.deltaTime);
-        m_SpeedVector = transform.forward * m_Speed;
+        if (!Game.is_Running)
+        {
+            return;
+        }
         if (transform.position.z >= target_z)
         {
             Game.finish();
             return;
         }
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, m_TargetRotation, m_RotationSpeed * Time.deltaTime);
+        m_SpeedVector = transform.forward * m_Speed;
         transform.position = transform.position + m_SpeedVector * Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Space))
         {
