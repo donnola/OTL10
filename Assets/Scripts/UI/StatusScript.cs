@@ -1,42 +1,73 @@
-﻿using Assets.Scripts.Assets.Scripts;
+﻿using System;
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace Assets.Scripts.UI
+namespace Assets.Scripts
 {
-    public class StatusScript: MonoBehaviour
+    namespace Assets.Scripts
     {
-        [SerializeField] private Text m_Text;
-        [SerializeField] private GameObject m_Panel;
-        
-        private void OnEnable()
+        public static class Game
         {
-            Game.PrintTime += ChangeStatus;
-        }
-
-        private void OnDisable()
-        {
-            Game.PrintTime -= ChangeStatus;
-        }
-
-        private void ChangeStatus(int time)
-        {
-            Debug.Log(time);
-            if (time >= 3)
+            public static event Action<int> GetMoney;
+            public static event Action<bool> EndGame; 
+            private static int m_Money;
+            public static bool is_Running = true;
+            public static bool is_Die = false;
+            public static bool is_Win = false;
+            public static float TimeBeforeStart;
+            public static event Action<int> PrintTime; 
+            
+            public static int Money => m_Money;
+            //public static GameObject Player;
+            
+            public static void start_attempt()
             {
-                m_Panel.SetActive(true);
-                m_Text.text = "3";
+                m_Money = 0;
+                Time.timeScale = 1f;
+                GetMoney?.Invoke(m_Money);
+                is_Running = true;
+                TimeBeforeStart = 10f;
+                updateTimeBeforeStart(3f);
             }
-            else if (time <= 0)
+
+            public static void updateTimeBeforeStart(float time)
             {
-                m_Panel.SetActive(false);
+                //Debug.Log((int) Math.Floor(time));
+                //Debug.Log((int) Math.Floor(TimeBeforeStart));
+                if ((int) Math.Floor(time) != (int) Math.Floor(TimeBeforeStart))
+                {
+                    Debug.Log((int) Math.Floor(TimeBeforeStart));
+                    PrintTime?.Invoke((int) Math.Floor(TimeBeforeStart));
+                }
+                TimeBeforeStart = time;
             }
-            else
+
+            public static void get_coin()
             {
-                m_Panel.SetActive(true);
-                m_Text.text = (time).ToString();
+                Debug.Log("Coin!");
+                ++m_Money;
+                GetMoney?.Invoke(m_Money);
+                if (m_Money == 10)
+                {
+                    is_Running = false;
+                    EndGame?.Invoke(false);
+                }
+            }
+
+            public static void finish()
+            {
+                is_Running = false;
+                EndGame?.Invoke(false);
+                Debug.Log("Конец");
+            }
+
+            public static void die()
+            {
+                is_Running = false;
+                is_Die = true;
+                EndGame?.Invoke(true);
+                Debug.Log("Die!");
             }
         }
-
     }
 }

@@ -1,11 +1,8 @@
 ﻿using System;
 using UnityEditor;
 using UnityEngine;
-
 namespace Assets.Scripts
 {
-    namespace Assets.Scripts
-    {
         public static class Game
         {
             public static event Action<int> GetMoney;
@@ -69,5 +66,4 @@ namespace Assets.Scripts
                 Debug.Log("Die!");
             }
         }
-    }
 }

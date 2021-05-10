@@ -13,9 +13,9 @@ namespace Assets.Scripts.UI
 
         public void restartGame()
         {
+            Game.start_attempt();
             SceneManager.LoadScene(m_Scene.name);
             SceneManager.LoadScene(UIScene.name, LoadSceneMode.Additive);
-            Game.start_attempt();
         }
 
         public void Quit()
