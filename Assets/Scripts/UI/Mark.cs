@@ -21,7 +21,24 @@ namespace Assets.Scripts.UI
 
         void ChangeMark(int coins)
         {
-            m_Text.text = $"отл({coins})";
+            if (coins < 3)
+            {
+                m_Text.text = $"неуд({coins})";
+            }
+
+            if (coins >= 3 && coins < 5)
+            {
+                m_Text.text = $"уд({coins})";
+            }
+
+            if (coins >= 5 && coins < 8)
+            {
+                m_Text.text = $"хор({coins})";
+            }
+            if (coins >= 8)
+            {
+                m_Text.text = $"отл({coins})";
+            }
         }
     }
 }
