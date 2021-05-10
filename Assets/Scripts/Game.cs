@@ -11,7 +11,7 @@ namespace Assets.Scripts
             public static event Action<int> GetMoney;
             public static event Action<bool> EndGame; 
             private static int m_Money;
-            private static bool is_Running;
+            public static bool is_Running;
             
             public static int Money => m_Money;
             //public static GameObject Player;
