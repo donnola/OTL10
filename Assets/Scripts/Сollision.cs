@@ -11,6 +11,10 @@ namespace Assets.Scripts
             {
                 Game.die();
             }
+            if (other.CompareTag("Coin"))
+            {
+                Game.get_coin();
+            }
         }
     }
 }
