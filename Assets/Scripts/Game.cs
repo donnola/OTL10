@@ -14,6 +14,8 @@ namespace Assets.Scripts
             public static bool is_Running = true;
             public static bool is_Die = false;
             public static bool is_Win = false;
+            public static float TimeBeforeStart;
+            public static event Action<int> PrintTime; 
             
             public static int Money => m_Money;
             //public static GameObject Player;
@@ -23,6 +25,20 @@ namespace Assets.Scripts
                 m_Money = 0;
                 GetMoney?.Invoke(m_Money);
                 is_Running = true;
+                TimeBeforeStart = 10f;
+                updateTimeBeforeStart(3f);
+            }
+
+            public static void updateTimeBeforeStart(float time)
+            {
+                //Debug.Log((int) Math.Floor(time));
+                //Debug.Log((int) Math.Floor(TimeBeforeStart));
+                if ((int) Math.Floor(time) != (int) Math.Floor(TimeBeforeStart))
+                {
+                    Debug.Log((int) Math.Floor(TimeBeforeStart));
+                    PrintTime?.Invoke((int) Math.Floor(TimeBeforeStart));
+                }
+                TimeBeforeStart = time;
             }
 
             public static void get_coin()
