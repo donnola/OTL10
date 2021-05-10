@@ -35,9 +35,6 @@ public class movement : MonoBehaviour
         m_RightPressed = Input.GetKeyDown(KeyCode.RightArrow);
         //m_CurrentRotation = Quaternion.Euler(m_BaseRotation);
         updateTargetRotation();
-        
-        Game.finish();
-        
         //m_SpeedVector = transform.forward * m_Speed;
     }
 
