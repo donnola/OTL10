@@ -9,7 +9,9 @@ namespace Assets.Scripts
         public static class Game
         {
             public static event Action<int> GetMoney;
+            public static event Action<bool> EndGame; 
             private static int m_Money;
+            private static bool is_Running;
             
             public static int Money => m_Money;
             //public static GameObject Player;
@@ -18,6 +20,7 @@ namespace Assets.Scripts
             {
                 m_Money = 0;
                 GetMoney?.Invoke(m_Money);
+                is_Running = true;
             }
 
             public static void get_coin()
@@ -29,6 +32,8 @@ namespace Assets.Scripts
 
             public static void finish()
             {
+                is_Running = false;
+                EndGame?.Invoke(false);
                 if (m_Money >= 10)
                 {
                     
@@ -42,6 +47,8 @@ namespace Assets.Scripts
 
             public static void die()
             {
+                is_Running = false;
+                EndGame?.Invoke(true);
                 Debug.Log("Die!");
             }
         }
