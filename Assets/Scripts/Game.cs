@@ -11,7 +11,9 @@ namespace Assets.Scripts
             public static event Action<int> GetMoney;
             public static event Action<bool> EndGame; 
             private static int m_Money;
-            public static bool is_Running;
+            public static bool is_Running = true;
+            public static bool is_Die = false;
+            public static bool is_Win = false;
             
             public static int Money => m_Money;
             //public static GameObject Player;
@@ -19,6 +21,7 @@ namespace Assets.Scripts
             public static void start_attempt()
             {
                 m_Money = 0;
+                is_Running = true;
                 GetMoney?.Invoke(m_Money);
             }
 
@@ -35,7 +38,7 @@ namespace Assets.Scripts
                 EndGame?.Invoke(false);
                 if (m_Money >= 10)
                 {
-                    
+                    is_Win = true;
                 }
                 else
                 {
@@ -47,6 +50,7 @@ namespace Assets.Scripts
             public static void die()
             {
                 is_Running = false;
+                is_Die = true;
                 EndGame?.Invoke(true);
                 Debug.Log("Die!");
             }

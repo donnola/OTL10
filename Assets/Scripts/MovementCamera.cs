@@ -10,7 +10,7 @@ public class MovementCamera : MonoBehaviour
     [SerializeField] 
     private float m_distant = 5.0f;
     [SerializeField]
-    private Transform m_target;
+    public Transform m_target;
 
     private void Awake()
     {

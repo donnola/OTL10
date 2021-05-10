@@ -10,17 +10,10 @@ namespace Assets.Scripts.UI
         [SerializeField] private GameObject m_EndPanel;
         [SerializeField] private GameObject m_Info;
         [SerializeField] private SceneAsset m_MenuScene;
-        [SerializeField] private Transform m_Player;
 
         public void restartGame()
         {
-            m_EndPanel.SetActive(false);
-            m_Info.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.Space))
-            { 
-                Application.LoadLevel(m_MenuScene.name);
-                Destroy(m_Player);
-            }
+            Application.LoadLevel(m_MenuScene.name);
         }
 
         public void Quit()

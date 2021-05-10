@@ -100,14 +100,21 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        process_keys();
-        if (!Game.is_Running)
-        {
-            return;
-        }
         if (transform.position.z >= target_z)
         {
             Game.finish();
+            return;
+        }
+        process_keys();
+        if (!Game.is_Running)
+        {
+            Debug.Log("i here");
+
+            return;
+        }
+        if (Game.is_Die)
+        {
+            Destroy(gameObject);
             return;
         }
         transform.rotation = Quaternion.RotateTowards(transform.rotation, m_TargetRotation, m_RotationSpeed * Time.deltaTime);
