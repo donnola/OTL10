@@ -34,11 +34,10 @@ public class movement : MonoBehaviour
         m_RightPressed = Input.GetKeyDown(KeyCode.RightArrow);
         //m_CurrentRotation = Quaternion.Euler(m_BaseRotation);
         updateTargetRotation();
-        //m_SpeedVector = transform.forward * m_Speed;
-        Debug.Log(transform.forward);
-        Debug.Log(transform.up);
-        Debug.Log(transform.right);
         
+        Game.finish();
+        
+        //m_SpeedVector = transform.forward * m_Speed;
     }
 
     private void Start()
