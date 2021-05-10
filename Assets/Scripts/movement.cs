@@ -7,13 +7,13 @@ public class movement : MonoBehaviour
 {
     [SerializeField] private float m_Speed;
     private Vector3 m_SpeedVector;
-    [SerializeField] private float target_x;
+    [SerializeField] private float target_z;
     // Start is called before the first frame update
     private bool m_UpPressed, m_DownPressed, m_LeftPressed, m_RightPressed;
-    private Vector3 m_UpDirection = new Vector3(1, 0, 0);
-    private Vector3 m_RightDirection = new Vector3(0, 1, 0);
-    private Vector3 m_LeftDirection = new Vector3(0, -1, 0);
-    private Vector3 m_DownDirection = new Vector3(-1, 0, 0);
+    private Vector3 m_UpDirection = new Vector3(0, 1, 0);
+    private Vector3 m_RightDirection = new Vector3(1, 0, 0);
+    private Vector3 m_LeftDirection = new Vector3(-1, 0, 0);
+    private Vector3 m_DownDirection = new Vector3(0, -1, 0);
     [SerializeField] private float m_RotationAngle;
     [SerializeField] private Vector3 m_StartPosition;
     [SerializeField] private Vector3 m_BaseRotation;
@@ -26,7 +26,7 @@ public class movement : MonoBehaviour
         m_LeftPressed = Input.GetKeyDown(KeyCode.LeftArrow);
         m_RightPressed = Input.GetKeyDown(KeyCode.RightArrow);
         updateRotation();
-        m_SpeedVector = -transform.forward * m_Speed;
+        m_SpeedVector = transform.forward * m_Speed;
         Debug.Log(transform.forward);
         Debug.Log(transform.up);
         Debug.Log(transform.right);
@@ -82,7 +82,7 @@ public class movement : MonoBehaviour
         {
             Debug.Log("Change");
             updateRotation();
-            m_SpeedVector = -transform.forward * m_Speed;
+            m_SpeedVector = transform.forward * m_Speed;
         }
     }
 
@@ -98,7 +98,7 @@ public class movement : MonoBehaviour
     void Update()
     {
         process_keys();
-        if (transform.position.x < target_x)
+        if (transform.position.z >= target_z)
         {
             return;
         }
