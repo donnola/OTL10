@@ -314,6 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0492232a06aa39e419e29268f10da6f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UIScene: {fileID: 102900000, guid: f3e82faf1611ab644a66436397718d42, type: 3}
   m_Scene: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
 --- !u!4 &860346440
 Transform:

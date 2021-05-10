@@ -27,7 +27,15 @@ namespace Assets.Scripts
 
             public static void finish()
             {
-                Debug.Log("Finish!");
+                if (m_Money >= 10)
+                {
+                    
+                }
+                else
+                {
+                    Debug.Log("Уд тебе");
+                }
+                Debug.Log("Ваш заслуженный отл 10");
             }
 
             public static void die()

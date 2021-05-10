@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts.Assets.Scripts;
 using UnityEngine;
 
 public class movement : MonoBehaviour
@@ -111,6 +112,7 @@ public class movement : MonoBehaviour
         m_SpeedVector = transform.forward * m_Speed;
         if (transform.position.z >= target_z)
         {
+            Game.finish();
             return;
         }
         transform.position = transform.position + m_SpeedVector * Time.deltaTime;

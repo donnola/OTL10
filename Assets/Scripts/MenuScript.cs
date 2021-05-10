@@ -7,10 +7,12 @@ namespace Assets.Scripts
 {
     public class MenuScript : MonoBehaviour
     {
+        [SerializeField] private SceneAsset UIScene;
         [SerializeField] private SceneAsset m_Scene;
         public void StartGame()
         {
             SceneManager.LoadScene(m_Scene.name);
+            SceneManager.LoadScene(UIScene.name, LoadSceneMode.Additive);
         }
     }
 }
