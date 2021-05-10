@@ -17,6 +17,7 @@ namespace Assets.Scripts
                 Destroy(other.gameObject);
                 Game.get_coin();
             }
+            
         }
     }
 }
