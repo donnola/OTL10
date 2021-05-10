@@ -21,6 +21,7 @@ namespace Assets.Scripts
             public static void start_attempt()
             {
                 m_Money = 0;
+                Time.timeScale = 1f;
                 GetMoney?.Invoke(m_Money);
                 is_Running = true;
             }
@@ -35,16 +36,8 @@ namespace Assets.Scripts
             public static void finish()
             {
                 is_Running = false;
-                EndGame?.Invoke(false);
-                if (m_Money >= 10)
-                {
-                    is_Win = true;
-                }
-                else
-                {
-                    Debug.Log("Уд тебе");
-                }
-                Debug.Log("Ваш заслуженный отл 10");
+                EndGame?.Invoke(true);
+                Debug.Log("Конец");
             }
 
             public static void die()
