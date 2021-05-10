@@ -21,8 +21,8 @@ namespace Assets.Scripts
             public static void start_attempt()
             {
                 m_Money = 0;
-                is_Running = true;
                 GetMoney?.Invoke(m_Money);
+                is_Running = true;
             }
 
             public static void get_coin()
