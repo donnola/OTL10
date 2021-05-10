@@ -1,4 +1,6 @@
-﻿namespace Assets.Scripts
+﻿using UnityEngine;
+
+namespace Assets.Scripts
 {
     namespace Assets.Scripts
     {
@@ -11,17 +13,17 @@
 
             public static void get_coin()
             {
-                
+                Debug.Log("Coin!");
             }
 
             public static void finish()
             {
-                
+                Debug.Log("Finish!");
             }
 
             public static void die()
             {
-                
+                Debug.Log("Die!");
             }
         }
     }
