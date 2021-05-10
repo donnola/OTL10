@@ -38,10 +38,6 @@ public class movement : MonoBehaviour
         //m_SpeedVector = transform.forward * m_Speed;
     }
 
-    private void Start()
-    {
-    }
-
     private void updateTargetRotation()
     {
         Vector3 rotation = m_BaseRotation;

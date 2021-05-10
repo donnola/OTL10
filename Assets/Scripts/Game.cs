@@ -20,7 +20,6 @@ namespace Assets.Scripts
             {
                 m_Money = 0;
                 GetMoney?.Invoke(m_Money);
-                is_Running = true;
             }
 
             public static void get_coin()
