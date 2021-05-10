@@ -55,6 +55,7 @@ namespace Assets.Scripts
             {
                 is_Running = false;
                 EndGame?.Invoke(false);
+                Time.timeScale = 0f;
                 Debug.Log("Конец");
             }
 
@@ -62,6 +63,7 @@ namespace Assets.Scripts
             {
                 is_Running = false;
                 is_Die = true;
+                Time.timeScale = 0f;
                 EndGame?.Invoke(true);
                 Debug.Log("Die!");
             }

@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.Assets.Scripts;
-using UnityEditor;
+﻿using UnityEditor;
 //using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;

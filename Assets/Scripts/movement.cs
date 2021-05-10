@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Assets.Scripts.Assets.Scripts;
+using Assets.Scripts;
 using Assets.Scripts.UI;
 using UnityEngine;
 
@@ -105,10 +105,6 @@ public class movement : MonoBehaviour
             Game.finish();
         }
         process_keys();
-        if (!Game.is_Running)
-        {
-            Time.timeScale = 0f;
-        }
         transform.rotation = Quaternion.RotateTowards(transform.rotation, m_TargetRotation, m_RotationSpeed * Time.deltaTime);
         m_SpeedVector = transform.forward * m_Speed;
         transform.position = transform.position + m_SpeedVector * Time.deltaTime;
