@@ -1102,6 +1102,8 @@ MonoBehaviour:
   m_EndPanel: {fileID: 1406738429}
   m_Info: {fileID: 935781513}
   m_MenuScene: {fileID: 102900000, guid: 190410a831acfcd498401a489aee6dac, type: 3}
+  UIScene: {fileID: 102900000, guid: f3e82faf1611ab644a66436397718d42, type: 3}
+  m_Scene: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
 --- !u!1 &1619951169
 GameObject:
   m_ObjectHideFlags: 0

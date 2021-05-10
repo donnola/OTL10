@@ -112,11 +112,6 @@ public class movement : MonoBehaviour
 
             return;
         }
-        if (Game.is_Die)
-        {
-            Destroy(gameObject);
-            return;
-        }
         transform.rotation = Quaternion.RotateTowards(transform.rotation, m_TargetRotation, m_RotationSpeed * Time.deltaTime);
         m_SpeedVector = transform.forward * m_Speed;
         transform.position = transform.position + m_SpeedVector * Time.deltaTime;
