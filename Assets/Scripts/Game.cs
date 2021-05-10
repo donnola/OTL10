@@ -1,11 +1,8 @@
 ﻿using System;
 using UnityEditor;
 using UnityEngine;
-
 namespace Assets.Scripts
 {
-    namespace Assets.Scripts
-    {
         public static class Game
         {
             public static event Action<int> GetMoney;
@@ -58,6 +55,7 @@ namespace Assets.Scripts
             {
                 is_Running = false;
                 EndGame?.Invoke(false);
+                Time.timeScale = 0f;
                 Debug.Log("Конец");
             }
 
@@ -65,9 +63,9 @@ namespace Assets.Scripts
             {
                 is_Running = false;
                 is_Die = true;
+                Time.timeScale = 0f;
                 EndGame?.Invoke(true);
                 Debug.Log("Die!");
             }
         }
-    }
 }

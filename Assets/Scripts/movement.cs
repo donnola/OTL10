@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Assets.Scripts.Assets.Scripts;
+using Assets.Scripts;
 using Assets.Scripts.UI;
 using UnityEngine;
 
@@ -100,23 +100,11 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        process_keys();
-        if (!Game.is_Running)
-        {
-            //Debug.Log("i here");
-            return;
-        }
-
-        if (Game.TimeBeforeStart > 0f)
-        {
-            Game.updateTimeBeforeStart(Game.TimeBeforeStart - Time.deltaTime);
-            return;
-        }
         if (transform.position.z >= target_z)
         {
             Game.finish();
-            return;
         }
+        process_keys();
         transform.rotation = Quaternion.RotateTowards(transform.rotation, m_TargetRotation, m_RotationSpeed * Time.deltaTime);
         m_SpeedVector = transform.forward * m_Speed;
         transform.position = transform.position + m_SpeedVector * Time.deltaTime;
