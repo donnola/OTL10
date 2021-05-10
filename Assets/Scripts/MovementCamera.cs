@@ -16,6 +16,7 @@ public class MovementCamera : MonoBehaviour
     {
         if (m_target != null) {
             transform.position = m_target.position - Vector3.forward * m_distant;
+            transform.LookAt(m_target.position);
         }
     }
 
@@ -24,6 +25,7 @@ public class MovementCamera : MonoBehaviour
     { 
         if (m_target != null) {
             transform.position = m_target.position - Vector3.forward * m_distant ;
+            transform.LookAt(m_target.position);
         }
     }
 }
