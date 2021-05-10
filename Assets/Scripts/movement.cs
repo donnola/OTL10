@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts.Assets.Scripts;
+using Assets.Scripts.UI;
 using UnityEngine;
 
 public class movement : MonoBehaviour
@@ -42,7 +43,6 @@ public class movement : MonoBehaviour
 
     private void Start()
     {
-        
     }
 
     private void updateTargetRotation()
